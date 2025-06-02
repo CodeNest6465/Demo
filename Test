@@ -1,0 +1,35 @@
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.2.5</version>
+            <configuration>
+                <includes>
+                    <include>**/*[Tt]est.java</include>
+                </includes>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+
+
+package com.example.demo;
+
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
+public class HelloControllerTest {
+
+    @Test
+    public void testSample() {
+        assertEquals("Hello", "Hello");
+    }
+}
+
+
+mvn clean test
+
+
+
