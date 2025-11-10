@@ -1,0 +1,137 @@
+@Component
+public class PGrpPcLvlListProcedure extends StoredProcedure {
+
+    public static final String OUT_RESULT = "p_result";
+
+    public PGrpPcLvlListProcedure(JdbcTemplate jdbcTemplate) {
+        super(jdbcTemplate, "kstwactorbdr.p_grp_pc_lvl_list");
+        declareParameter(new SqlOutParameter(OUT_RESULT, OracleTypes.CURSOR));
+        compile();
+    }
+
+    public List<String> executeProc() {
+        Map<String,Object> out = super.execute();
+        return (List<String>) out.get(OUT_RESULT);
+    }
+}
+
+
+@Component
+public class PGrpPcMneListProcedure extends StoredProcedure {
+
+    public static final String IN_GRP_PC_VI = "p_grp_pc_vi";
+    public static final String OUT_RESULT = "p_result";
+
+    public PGrpPcMneListProcedure(JdbcTemplate jdbcTemplate, PCSearchRowMapper mapper) {
+        super(jdbcTemplate, "kstwactorbdr.p_grp_pc_mne_list");
+        declareParameter(new SqlParameter(IN_GRP_PC_VI, Types.NUMERIC));
+        declareParameter(new SqlOutParameter(OUT_RESULT, OracleTypes.CURSOR, mapper));
+        compile();
+    }
+
+    public List<String> executeProc(Integer grpPcVi) {
+        Map<String,Object> in = Collections.singletonMap(IN_GRP_PC_VI, grpPcVi);
+        Map<String,Object> out = super.execute(in);
+        return (List<String>) out.get(OUT_RESULT);
+    }
+}
+
+
+@Repository
+public class GroupPcDAO {
+
+    @Autowired
+    private PGrpPcLvlListProcedure lvlProc;
+
+    @Autowired
+    private PGrpPcMneListProcedure mneProc;
+
+    public List<String> getLevels() {
+        return lvlProc.executeProc();
+    }
+
+    public List<String> getMneList(Integer grpPcVi) {
+        return mneProc.executeProc(grpPcVi);
+    }
+}
+
+
+public interface GroupPcService {
+    List<String> fetchLevels();
+    List<String> fetchMneList(Integer grpPcVi);
+}
+
+@Service
+public class GroupPcServiceImpl implements GroupPcService {
+
+    @Autowired
+    GroupPcDAO dao;
+
+    @Override
+    public List<String> fetchLevels() {
+        return dao.getLevels();
+    }
+
+    @Override
+    public List<String> fetchMneList(Integer grpPcVi) {
+        return dao.getMneList(grpPcVi);
+    }
+}
+
+@RestController
+@RequestMapping("/pc")
+public class GroupPcController {
+
+    @Autowired
+    GroupPcService service;
+
+    @GetMapping("/levels")
+    public ResponseEntity<List<String>> levels() {
+        return ResponseEntity.ok(service.fetchLevels());
+    }
+
+    @GetMapping("/mne/{grpPcVi}")
+    public ResponseEntity<List<String>> mne(@PathVariable Integer grpPcVi) {
+        return ResponseEntity.ok(service.fetchMneList(grpPcVi));
+    }
+}
+
+
+
+@Component
+public class PGrpPcLvlListProcedure extends StoredProcedure {
+
+    public static final String OUT_RESULT = "p_result";
+
+    public PGrpPcLvlListProcedure(JdbcTemplate jdbcTemplate) {
+        super(jdbcTemplate, "kstwactorbdr.p_grp_pc_lvl_list");
+        declareParameter(new SqlOutParameter(OUT_RESULT, OracleTypes.CURSOR));
+        compile();
+    }
+
+    public List<String> executeProc() {
+        Map<String,Object> out = super.execute();
+        return (List<String>) out.get(OUT_RESULT);
+    }
+}
+
+@Component
+public class PGrpPcMneListProcedure extends StoredProcedure {
+
+    public static final String IN_GRP_PC_VI = "p_grp_pc_vi";
+    public static final String OUT_RESULT = "p_result";
+
+    public PGrpPcMneListProcedure(JdbcTemplate jdbcTemplate, PCSearchRowMapper mapper) {
+        super(jdbcTemplate, "kstwactorbdr.p_grp_pc_mne_list");
+        declareParameter(new SqlParameter(IN_GRP_PC_VI, Types.NUMERIC));
+        declareParameter(new SqlOutParameter(OUT_RESULT, OracleTypes.CURSOR, mapper));
+        compile();
+    }
+
+    public List<String> executeProc(Integer grpPcVi) {
+        Map<String,Object> in = Collections.singletonMap(IN_GRP_PC_VI, grpPcVi);
+        Map<String,Object> out = super.execute(in);
+        return (List<String>) out.get(OUT_RESULT);
+    }
+}
+
