@@ -1,143 +1,21 @@
-controller :
+@Override
+public List<String> getLevels() {
 
-public class PCSearchRowMapper implements RowMapper<PCSearchDTO> {
-    @Override
-    public PCSearchDTO mapRow(ResultSet rs, int rowNum) throws SQLException {
-        PCSearchDTO dto = new PCSearchDTO();
-        dto.setCode(rs.getString("PC_CODE"));
-        dto.setDesc(rs.getString("PC_DESC"));
-        return dto;
-    }
+    StoredProcedure proc =
+            new StoredProcedure(mJdbcTemplate,"kstwactorbdr.p_grp_pc_lvl_list") {};
+
+    proc.declareParameter(
+            new org.springframework.jdbc.core.SqlOutParameter("p_result", OracleTypes.CURSOR));
+
+    proc.compile();
+
+    Map<String,Object> out = proc.execute();
+
+    // default cursor mapping = List< Map >
+    List<Map<String,Object>> rows = (List<Map<String,Object>>) out.get("p_result");
+
+    // since only 1 column → first col only
+    return rows.stream()
+               .map(m -> m.values().iterator().next().toString())
+               .collect(Collectors.toList());
 }
-
-
-@RestController
-@RequestMapping("/pc")
-public class GroupPcController {
-
-    @Autowired
-    GroupPcService service;
-
-    @GetMapping("/levels")
-    public ResponseEntity<List<String>> getLevels() {
-        return ResponseEntity.ok(service.fetchLevels());
-    }
-
-    @GetMapping("/mne-list/{grpPcVi}")
-    public ResponseEntity<List<PCSearchDTO>> getMneList(@PathVariable Integer grpPcVi) {
-        return ResponseEntity.ok(service.fetchMneList(grpPcVi));
-    }
-}
-
-@Service
-public class GroupPcServiceImpl implements GroupPcService {
-
-    @Autowired
-    GroupPcDAO dao;
-
-    @Override
-    public List<String> fetchLevels() {
-        return dao.getAllLevels();
-    }
-
-    @Override
-    public List<PCSearchDTO> fetchMneList(Integer grpPcVi) {
-        return dao.getMneList(grpPcVi);
-    }
-}
-public interface GroupPcService {
-    List<String> fetchLevels();
-    List<PCSearchDTO> fetchMneList(Integer grpPcVi);
-}
-
-@Repository
-public class GroupPcDAO {
-
-    @Autowired
-    private PGrpPcLvlListProcedure pGrpPcLvlListProcedure;
-
-    @Autowired
-    private PGrpPcMneListProcedure pGrpPcMneListProcedure;
-
-    public List<String> getAllLevels() {
-        return pGrpPcLvlListProcedure.executeProc();
-    }
-
-    public List<PCSearchDTO> getMneList(Integer grpPcVi) {
-        return pGrpPcMneListProcedure.executeProc(grpPcVi);
-    }
-}
-
-@Component
-public class PGrpPcMneListProcedure extends StoredProcedure {
-
-    public static final String IN_GRP_PC_VI = "p_grp_pc_vi";
-    public static final String OUT_RESULT = "p_result";
-
-    public PGrpPcMneListProcedure(JdbcTemplate jdbcTemplate, PCSearchRowMapper mapper) {
-        super(jdbcTemplate, "kstwactorbdr.p_grp_pc_mne_list");
-        declareParameter(new SqlParameter(IN_GRP_PC_VI, Types.NUMERIC));
-        declareParameter(new SqlOutParameter(OUT_RESULT, OracleTypes.CURSOR, mapper));
-        compile();
-    }
-
-    public List<PCSearchDTO> executeProc(Integer grpPcVi) {
-        Map<String, Object> out = super.execute(Collections.singletonMap(IN_GRP_PC_VI, grpPcVi));
-        return (List<PCSearchDTO>) out.get(OUT_RESULT);
-    }
-}
-
-@Component
-public class PGrpPcLvlListProcedure extends StoredProcedure {
-
-    public static final String OUT_RESULT = "p_result";
-
-    public PGrpPcLvlListProcedure(JdbcTemplate jdbcTemplate) {
-        super(jdbcTemplate, "kstwactorbdr.p_grp_pc_lvl_list");
-        declareParameter(new SqlOutParameter(OUT_RESULT, OracleTypes.CURSOR));
-        compile();
-    }
-
-    public List<String> executeProc() {
-        Map<String, Object> out = super.execute();
-        return (List<String>) out.get(OUT_RESULT);
-    }
-}
-
-
-
-  @Override
-    public List<String> getLevels() {
-
-        StoredProcedure procGrpPcLvl =
-                new StoredProcedure(mJdbcTemplate, "kstwactorbdr.p_grp_pc_lvl_list") {};
-
-        procGrpPcLvl.declareParameter(
-                new org.springframework.jdbc.core.SqlOutParameter("p_result", OracleTypes.CURSOR));
-
-        procGrpPcLvl.compile();
-
-        Map<String, Object> out = procGrpPcLvl.execute();
-        return (List<String>) out.get("p_result");
-    }
-
-
-    @Override
-    public List<String> getMneList(Integer grpPcVi) {
-
-        StoredProcedure procGrpPcMne =
-                new StoredProcedure(mJdbcTemplate, "kstwactorbdr.p_grp_pc_mne_list") {};
-
-        procGrpPcMne.declareParameter(
-                new org.springframework.jdbc.core.SqlParameter("p_grp_pc_vi", Types.NUMERIC));
-
-        procGrpPcMne.declareParameter(
-                new org.springframework.jdbc.core.SqlOutParameter("p_result", OracleTypes.CURSOR, mapper));
-
-        procGrpPcMne.compile();
-
-        Map<String,Object> in = Collections.singletonMap("p_grp_pc_vi", grpPcVi);
-        Map<String,Object> out = procGrpPcMne.execute(in);
-
-        return (List<String>) out.get("p_result");
-    }
