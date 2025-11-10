@@ -104,3 +104,40 @@ public class PGrpPcLvlListProcedure extends StoredProcedure {
     }
 }
 
+
+
+  @Override
+    public List<String> getLevels() {
+
+        StoredProcedure procGrpPcLvl =
+                new StoredProcedure(mJdbcTemplate, "kstwactorbdr.p_grp_pc_lvl_list") {};
+
+        procGrpPcLvl.declareParameter(
+                new org.springframework.jdbc.core.SqlOutParameter("p_result", OracleTypes.CURSOR));
+
+        procGrpPcLvl.compile();
+
+        Map<String, Object> out = procGrpPcLvl.execute();
+        return (List<String>) out.get("p_result");
+    }
+
+
+    @Override
+    public List<String> getMneList(Integer grpPcVi) {
+
+        StoredProcedure procGrpPcMne =
+                new StoredProcedure(mJdbcTemplate, "kstwactorbdr.p_grp_pc_mne_list") {};
+
+        procGrpPcMne.declareParameter(
+                new org.springframework.jdbc.core.SqlParameter("p_grp_pc_vi", Types.NUMERIC));
+
+        procGrpPcMne.declareParameter(
+                new org.springframework.jdbc.core.SqlOutParameter("p_result", OracleTypes.CURSOR, mapper));
+
+        procGrpPcMne.compile();
+
+        Map<String,Object> in = Collections.singletonMap("p_grp_pc_vi", grpPcVi);
+        Map<String,Object> out = procGrpPcMne.execute(in);
+
+        return (List<String>) out.get("p_result");
+    }
