@@ -1,4 +1,32 @@
-@Override
+removeGrppcMulti(removeAll: boolean = false) {
+  console.log('removeGrppcMulti called. removeAll =', removeAll);
+  console.log('selectedItemGrppcMulti:', this.selectedItemGrppcMulti);
+  console.log('selectedRowGrppcMulti:', this.selectedRowGrppcMulti);
+
+  if (removeAll) {
+    // Remove all GRPPCs
+    this.ptfActor.grppcMulti = [];
+    this.selectedRowGrppcMulti = null;
+    this.selectedItemGrppcMulti = null;
+    this.selectedGrppcMulti = [];
+
+    if (this.grppcMultiDropDown) {
+      this.grppcMultiDropDown.clearModel();
+    }
+    return;
+  }
+
+  // Normal single remove case
+  if (this.selectedRowGrppcMulti == null) {
+    this.errorPopUp('Please select at least one choice to remove.');
+    return;
+  }
+
+  this.ptfActor.grppcMulti.splice(this.selectedRowGrppcMulti, 1);
+  this.selectedRowGrppcMulti = null;
+  this.selectedItemGrppcMulti = null;
+}
+
 public List<String> getLevels() {
 
     StoredProcedure proc =
