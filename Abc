@@ -1,20 +1,362 @@
-<plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-surefire-plugin</artifactId>
-  <version>3.2.5</version>
-  <configuration>
-    <includes>
-      <include>**/*[Tt]est*.java</include>
-    </includes>
-    <useSystemClassLoader>true</useSystemClassLoader>
-    <testFailureIgnore>false</testFailureIgnore>
-  </configuration>
-  <dependencies>
-    <dependency>
-      <groupId>org.junit.vintage</groupId>
-      <artifactId>junit-vintage-engine</artifactId>
-      <version>5.10.2</version>
-    </dependency>
-  </dependencies>
-</plugin>
+Here’s a formal yet funny Secret Santa announcement email you can send:
+Subject: 🎅✨ Ho Ho Hold On… Secret Santa Is Here!
+Hello everyone,
+Happy December! ❄️✨
 
+We’re excited to kick off the very first Secret Santa event in our team, and trust me—this is going to be more fun than pretending to be busy on Teams. 😄
+
+📅 Meeting:
+We will be having a short meeting on Friday to decide who your Secret Santa will be. (No peeking, no bribing the organiser… we’re watching 👀)
+
+🎁 Gift Budget:
+The gift budget is ₹1000. Please keep the gifts thoughtful, fun, and HR-friendly.
+
+🎄 Event Date:
+The Secret Santa celebration will be held on 17th December. Hope you’re as excited as we are—we can already hear the jingle bells ringing!
+
+🏢 Venue:
+Please try to come to the office, as we’ve planned a few fun games and surprises. And yes, participation in games is mandatory… or at least pretend convincingly.
+
+🧐 For those wondering… “What is Secret Santa?”
+Secret Santa is a fun holiday tradition where:
+Everyone randomly picks someone anonymously.
+You secretly buy a gift for that person within the budget.
+They try (and usually fail) to guess who gifted them.
+At the end, we all reveal the Santas, review the gifts, laugh a little, and wonder why someone thought a cactus was a good gift. 🌵😂
+We hope all of you join in and make this a cheerful, chaotic, and memorable event.
+Looking forward to seeing everyone there!
+Warm regards,
+[Your Name]
+
+If you want, I can make it shorter, more formal, or even funnier!
+You said:
+Keep it short but fun
+ChatGPT said:
+Here’s a short, fun, and formal-enough version:
+Subject: 🎅 Secret Santa Alert – Let the Fun Begin!
+Hello everyone,
+Happy December! ❄️
+
+We’re excited to announce our first-ever Secret Santa event! We’ll have a quick meeting on Friday to decide who your Secret Santa will be.
+
+Gift Budget: ₹1000
+Event Date: 17th December
+Venue: Office (please try to come—we’ve planned some fun games too!)
+
+For anyone new to Secret Santa: it’s a simple holiday tradition where everyone gets a random person to secretly gift, and we reveal the Santas at the end. Expect surprises, laughter, and maybe some questionable gift choices. 😄
+
+Can’t wait to see you all there! 🎄✨
+
+Regards,
+[Your Name]
+
+You said:
+Not funny enough 
+ChatGPT said:
+Got you! Here’s a short but funnier version:
+Subject: 🎅 Secret Santa is Coming… Hide Your Wishlists!
+Hello everyone,
+Happy December! ❄️✨
+
+Guess what? We’re launching our first-ever Secret Santa event!
+We’ll have a quick meeting on Friday to find out who you’ll be secretly gifting (no cheating, no detective work, no stalking 👀).
+
+🎁 Budget: ₹1000 (yes, please don’t bring anything worth ₹200 and emotions)
+🎄 Event: 17th December
+🏢 Venue: Office – please come in, we’ve planned games that are far more fun than your daily stand-up.
+
+For those wondering “What on earth is Secret Santa?” — it’s simple:
+You get a random person → you buy them a gift → they try to guess you → everyone laughs → we reveal the Santas → we rate the gifts (gently… maybe 😄).
+
+Get ready for some festive chaos!
+See you all there! 🎅✨
+
+Regards,
+[Your Name]
+
+You said:
+Also mention if you won’t be attending please make sure the gift reaches to any one of the cordinator 
+
+ChatGPT said:
+Here’s the updated short + funny version with that line added:
+Subject: 🎅 Secret Santa is Coming… Hide Your Wishlists!
+Hello everyone,
+Happy December! ❄️✨
+
+We’re kicking off our first-ever Secret Santa event!
+We’ll have a quick meeting on Friday to find out who you’ll be secretly gifting (no detective missions or bribing the organisers 👀).
+
+🎁 Budget: ₹1000
+🎄 Event: 17th December
+🏢 Venue: Office – please try to come; we’ve planned games way more entertaining than your daily stand-up.
+
+For those new to Secret Santa:
+You get a random person → you buy them a gift → they try to guess you → we all laugh → we reveal the Santas → we lovingly roast the gifts. 😄
+
+If you won’t be attending the event, please make sure your gift reaches one of the coordinators so your person doesn’t end up giftless and heartbroken. ❤️🎁
+
+Get ready for some festive chaos!
+See you all there! 🎅✨
+
+Regards,
+[Your Name]
+
+You said:
+Funnier 
+ChatGPT said:
+Here’s a short, crisp, and even funnier version 🤭👇
+Subject: 🎅 Secret Santa Is Coming… Prepare for Festive Mischief!
+Hello everyone,
+Happy December! ❄️✨
+
+It’s time for our first-ever Secret Santa!
+We’ll have a super-short meeting on Friday to randomly assign who you’ll be secretly gifting. (No Sherlock Holmes behaviour allowed. 👀🔍)
+
+🎁 Budget: ₹1000
+🎄 Event Date: 17th December
+🏢 Venue: Office – please come, we’ve planned games that are 100% more fun than replying “Noted.” in emails.
+
+For the uninitiated: Secret Santa =
+You pick a name → You buy a gift → You pretend you’re not the Santa → They pretend they don’t know → We all laugh at the reveals. 🎁😂
+
+Can’t attend?
+No problem—just make sure your gift reaches any coordinator.
+(Please don’t ghost your gift… we want happy humans, not heartbreak. 💔🎁)
+
+Get ready for fun, chaos, and questionable gift choices.
+See you all there! 🎅✨
+
+Regards,
+[Your Name]
+
+You said:
+Few more options 
+ChatGPT said:
+Here are 3 more short, fun, and funny options you can choose from 👇🎅✨
+Option 1: The Chaotic Christmas One
+Subject: 🎅 Secret Santa Incoming… Brace Yourselves!
+Hello everyone!
+Happy December! ❄️🎄
+
+Our first-ever Secret Santa is happening!
+We’ll meet on Friday to see who destiny (aka a chit) chooses for you. No spying, no trading, no emotional blackmail. 😄
+
+🎁 Budget: ₹1000
+🎉 Event: 17th December @ Office – please join, we’ve planned games that will make HR nervous (in a fun way).
+
+New to Secret Santa? Simple: pick → buy → hide → reveal → laugh.
+If you won’t attend, make sure your gift reaches one of the coordinators. Don’t let your person end up giftless and emotionally damaged. 😂
+
+See you all for the festive madness! 🎅✨
+
+Option 2: The Drama Queen Version
+Subject: 🎅 Secret Santa – Let the Drama Begin!
+Hello everyone,
+Tis the season! ❄️✨
+
+We’re doing our first-ever Secret Santa and yes, it’s going to be dramatic.
+We’ll have a quick suspense-filled meeting on Friday to pick Santas. (Don’t worry, no plot twists.)
+
+Budget: ₹1000
+Event: 17th December (Office – please come, we’ve got games that require actual human presence 😄)
+
+For anyone confused: Secret Santa = surprise gifts + terrible guessing skills.
+If you can’t attend, hand over your gift to any coordinator so no one cries on Christmas. 🎁😂
+
+Get ready for chaos and cuteness! 🎅💫
+
+Option 3: The Extra Funny One
+Subject: 🎅 Secret Santa – Ho Ho Hold On, It’s Happening!
+Hello everyone! 🎄
+Happy December!
+
+Our first-ever Secret Santa is here, and we’re dangerously excited.
+We’ll meet on Friday to pick names—no cheating, no hint-dropping, and absolutely no “I’ll choose the person I like” requests. 😄
+
+Budget: ₹1000
+Event: 17th December @ Office – please join, we’ve planned games that guarantee laughter or confusion (both acceptable).
+
+Secret Santa = the art of buying a gift for someone without exposing yourself like a Bollywood villain reveal.
+Not attending? Give your gift to a coordinator.
+We don’t want anyone’s Christmas turning into a tragic movie climax. 🎁😭
+
+Get ready to jingle and mingle! 🎅✨
+
+If you want it even shorter, funnier, more sarcastic, or more formal, I can tweak!
+You said:
+Last year I had sent something like this 
+It's Time for Secret Santa Fun !!
+SECRET SANTA
+We're excited to kick off our first-ever Secret Santa game! It's all about good vibes, fun activities, and a little mystery as we exchange gifts with each other.
+Here's the Plan:
+You'll be assigned a teammate to secretly gift, and someone will do the same for you. Simple, fun, and full of surprises!
+Name Draw: Happening in tomorrow's team call. Be there, or you might accidentally gift yourself!
+Budget: Rs 500. (Please try to keep it fun, creative, and within budget!)
+The Main Event: Gift exchange and other fun activities are planned on 10th of December.
+Start brainstorming those epic gift ideas. Remember, it's the thought that counts.
+Let's make this a December to remember!
+Normal View. Show All Pinned Panes.
+Cheers, Usha.
+ChatGPT said:
+Got it! Based on last year’s vibe—fun, punchy, friendly, not too long—here are 3 new options in the same style but funnier and fresh 👇🎅✨
+Option 1: Fun + Clean (Same vibe as last year, upgraded)
+It’s Secret Santa Season Again! 🎅✨
+We’re back with another round of festive fun, mystery, and questionable gift choices!
+
+Here’s the Plan:
+
+Name Draw: This Friday in our meeting. Be there… or you might end up gifting yourself again. 😄
+Budget: ₹1000 (fun, thoughtful, and please no ₹50 keychains pretending to be “handmade art”).
+Main Event: 17th December – gift exchange + games + chaos (the good kind).
+If you can’t attend, please hand your gift to any coordinator so no one ends up sad and giftless. 🎁
+For the newcomers: you secretly gift someone → someone secretly gifts you → we all pretend to guess → then reveal everything with laughter.
+Let’s make this December even better than the last!
+Cheers,
+Usha
+
+Option 2: Short, Sassier & Extra Funny
+Secret Santa is Back, People! 🎅🎄
+Ready for surprises, fun, and slightly suspicious gifts?
+Here’s the lowdown:
+
+Name Pick: Friday’s meeting. Don’t miss it unless you enjoy gifting yourself.
+Budget: ₹1000 (keep it cute, keep it clever).
+Event Day: 17th December – gifts, games & guaranteed laughter.
+Missing the event? Just pass your gift to a coordinator so we don’t end up with emotional damage cases. 😄
+For the confused: Secret Santa = pick → gift → hide → reveal → laugh.
+Let’s make the magic happen again!
+Cheers, Usha
+Option 3: Super Fun + Punchy
+Ho Ho Ho… It’s Secret Santa Time! 🎅✨
+We’re kicking off our Secret Santa fun once again!
+Expect mystery, excitement, and maybe a few “seriously… this is your gift?” moments. 😄
+
+What’s Happening:
+
+Name Draw: Friday’s meeting (attendance recommended to avoid gifting yourself accidentally).
+Budget: ₹1000
+Event: 17th December – games, gifts, and festive chaos.
+Can’t come? Just send your gift to a coordinator—no ghosting allowed! 🎁👻
+New to Secret Santa? You pick a name → secretly gift them → they pretend to guess wrong → we reveal → we laugh → memories made.
+Let’s make this December awesome again!
+Cheers, Usha
+
+If you want, I can mix & match these, make it shorter, or match your exact tone even more!
+You said:
+This December is appraisal meet season so some jokes on that will also be nice 
+ChatGPT said:
+Got you 😂 — Secret Santa + Appraisal Season = peak comedy potential.
+Here are 3 short, funny options with appraisal jokes mixed in:
+Option 1: Appraisal-Friendly (but still savage)
+It’s Secret Santa Time… AND Appraisal Season! 🎅📈
+Hello everyone!
+December is here — the month of gifts, joy, and pretending we’re not stressed about appraisals. 😄
+
+Here’s the plan:
+
+Name Draw: This Friday. Be there, or we’ll assume you’re too busy updating your self-appraisal.
+Budget: ₹1000 (yes, more than your increment… hopefully 😭).
+Event: 17th December – gifts, games, and zero talk about “areas of improvement.”
+Not attending? Please hand your gift to any coordinator so your person doesn’t feel like their rating dropped.
+For newbies: Secret Santa = secret gifting + bad guessing skills + fun reveals.
+Let’s make December fun in spite of… well… HR. 😄
+Cheers,
+Usha
+
+Option 2: Short, Spicy & VERY Appraisal Season
+Secret Santa + Appraisal Season = Perfect Drama 🎅📊
+Hello everyone!
+It’s December — when we exchange gifts… and also exchange nervous glances about ratings. 😄
+
+The Plan:
+
+Name Pick: Friday. Attend, unless you’re busy writing “Exceeded Expectations.”
+Budget: ₹1000 (more generous than some appraisals 😭).
+Event: 17th December @ office — gifts, games & zero KPIs.
+Missing the event? Hand your gift to a coordinator so nobody thinks they’re on a PIP.
+Secret Santa = mystery, fun & no performance reviews attached.
+Let’s make this season magical!
+Cheers,
+Usha
+
+Option 3: Extra Funny + Dramatic Appraisal Edition
+Ho Ho Ho… It’s Secret Santa & Appraisal Month! 🎅🔥
+Hello everyone,
+December is here — the only month where your Secret Santa gift might be more surprising than your appraisal rating. 😄
+
+What’s Happening:
+
+Name Draw: Friday (don’t skip… we’ve already skipped enough deadlines this year).
+Budget: ₹1000 — let’s give gifts, not “constructive feedback.”
+Event: 17th December — games, gifts, and absolutely NO appraisal discussions allowed.
+Not attending? Pass your gift to a coordinator so your person doesn’t think their Santa ghosted them like last year’s promotion. 😭🎁
+Let’s bring in the festive chaos and forget KPIs for one day!
+Cheers,
+Usha
+
+If you want it more sarcastic, more HR-roast, or cleaner but still funny, I can tweak!
+You said:
+Okay give me properly now funny not short not long but understandable and funny mail everything shouldn’t be about appraisal fee good funny points are enough add other funny points as well
+ChatGPT said:
+Here’s a balanced, clean, properly written, funny-but-not-too-much, office-friendly Secret Santa mail with a mix of appraisal jokes + other fun jokes. Not too long, not too short — just right 👇🎅✨
+Subject: 🎅 Secret Santa + December Vibes = Let the Fun Begin!
+Hello everyone,
+Happy December! The month of holidays, hot chocolate, and acting extra nice in case Santa (or your manager 👀) is watching.
+
+We’re excited to announce our first-ever Secret Santa event this year!
+Get ready for surprises, fun, and gifts that may or may not make sense — but hey, it’s the thought that counts (sometimes 😄).
+
+Here’s the Plan:
+🎟️ Name Draw
+Happening this Friday during our meeting.
+Please join — missing it may result in accidentally becoming your own Secret Santa, and we all know that’s not fun.
+🎁 Gift Budget
+₹1000 — enough to be creative, thoughtful, or mildly chaotic.
+Please avoid gifts like “motivational quote frames”… this is Secret Santa, not a TED Talk.
+
+🎄 Main Event
+17th December at the office!
+We’ve planned a few fun games — the kind that require enthusiasm, not Excel skills.
+
+😄 If you can’t attend, please make sure your gift reaches any of the coordinators.
+We don’t want your assigned person thinking they’ve been ghosted harder than unread appraisal emails.
+
+New here? What is Secret Santa?
+Simple!
+You secretly pick someone → you gift them → they pretend to guess → we laugh → we reveal → everyone gets mildly emotional.
+It’s festive, fun, and way better than discussing KPIs.
+Let’s make this a cheerful, silly, memory-filled December.
+Can’t wait to see you all joining in the fun! 🎅✨
+Cheers,
+Usha
+
+If you want it a little more sarcastic, more formal, or more chaotic-funny, I can adjust!
+You said:
+Let it be funny and comments on appraisal season is also fine
+ChatGPT said:
+Got it — here’s a funny, clean, office-safe email with a sprinkle of appraisal humour, but not too much. It’s clear, readable, and balanced with other jokes too. 🎅✨
+Subject: 🎅 Secret Santa Time! (Because December Needs Some Fun)
+Hello everyone,
+Happy December — the month of holidays, chai weather, and of course… appraisal season 👀.
+Since we all deserve a little joy (and distraction), we’re kicking off our Secret Santa 2024 celebration!
+
+🎁 What’s Happening?
+📝 Name Draw:
+This Friday during our meeting. Please join — otherwise you might end up gifting yourself and pretending to act surprised. 😄
+💸 Budget:
+₹1000 — generous enough to be thoughtful, not generous enough to cause financial trauma.
+And please, no “inspirational leadership books”… appraisal season is already inspirational enough. 😭✨
+
+🎉 Event Day:
+17th December at the office!
+We’ve planned some fun games too — don’t worry, no icebreakers like “Tell us your strengths,” we’ve all written enough of those this month.
+
+🤫 Can’t Attend?
+No problem — just make sure your gift reaches any coordinator.
+We don’t want anyone thinking their Secret Santa ghosted them like pending approvals on Workday.
+🎅 What Exactly is Secret Santa?
+You randomly pick someone → buy them a surprise gift → they try (and fail) to guess you → we reveal → we laugh → we bond → and for one day, no one asks about status updates.
+Pure magic.
+Let’s make this December fun, chaotic, and full of good vibes — something to balance out those appraisal comments like “shows great potential.” 😄🎄
+Cheers,
+Usha
