@@ -1,0 +1,75 @@
+<div class="form-group col-6">
+  <label>Attribute</label>
+
+  <ng-select
+    [items]="dropdownOptions"
+    bindLabel="label"
+    bindValue="value"
+    [(ngModel)]="selectedAttributes"
+    [multiple]="true"
+    [closeOnSelect]="false"
+    [hideSelected]="false"
+    [clearable]="false"
+    [searchable]="false">
+
+    <!-- SELECT ALL -->
+    <ng-template ng-header-tmp>
+      <input type="checkbox"
+             [checked]="isAllSelected()"
+             (change)="toggleSelectAll($event)" />
+      <label>Select All</label>
+    </ng-template>
+
+    <!-- OPTIONS WITH CHECKBOX -->
+    <ng-template ng-option-tmp let-item="item">
+      <input type="checkbox"
+             [checked]="selectedAttributes.includes(item.value)"
+             (change)="toggleSelection(item.value)" />
+      {{ item.label }}
+    </ng-template>
+
+  </ng-select>
+</div>
+
+
+dropdownOptions: { label: string; value: string }[] = [];
+selectedAttributes: string[] = [];
+
+// Handle individual checkbox
+toggleSelection(value: string) {
+  const index = this.selectedAttributes.indexOf(value);
+
+  if (index === -1) {
+    this.selectedAttributes.push(value);
+  } else {
+    this.selectedAttributes.splice(index, 1);
+  }
+}
+
+// Handle SELECT ALL checkbox
+toggleSelectAll(event: Event) {
+  const isChecked = (event.target as HTMLInputElement).checked;
+
+  if (isChecked) {
+    this.selectedAttributes = this.dropdownOptions.map(o => o.value);
+  } else {
+    this.selectedAttributes = [];
+  }
+}
+
+// For header checkbox binding
+isAllSelected(): boolean {
+  return this.selectedAttributes.length === this.dropdownOptions.length;
+}
+
+// For API call → if nothing selected, pass all attributes
+getFinalAttributeValues(): string[] {
+  return this.selectedAttributes.length === 0
+    ? this.dropdownOptions.map(o => o.value)
+    : this.selectedAttributes;
+}
+
+// Get comma-separated string for backend
+getCommaSeparatedAttributes(): string {
+  return this.getFinalAttributeValues().join(',');
+}
